@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+if Rails.env.development?
+  puts "Destrroying breweries"
+  Brewery.destroy_all
+end
+
+puts "Creating new brewery"
+Brewery.create!(
+  name: "Waszczukowe",
+  banner_url: "https://www.waszczukowe.pl/"
+)
+
+Brewery.create!(
+  name: "Markowy",
+  banner_url: "https://browarmarkowy.pl/"
+)
+
+Brewery.create!(
+  name: "Bialy",
+  banner_url: "https://browarbialy.pl/"
+)
+
+puts "Seeding done!"

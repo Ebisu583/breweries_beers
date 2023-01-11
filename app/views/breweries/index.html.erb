@@ -1,0 +1,10 @@
+<div class="container">
+<h1>Breweries</h1>
+<ul>
+<% @breweries.each do |brewery| %>
+<li>
+<%= link_to brewery.name, brewery_path(brewery) %>
+</li>
+<% end %>
+</ul>
+</div>
