@@ -18,7 +18,7 @@
                   <div>
                     <h2><%= beer.name %></h2>
                   </div>
-                  <%= link_to beer_path(beer), method: :delete, data: { confirm: "Sure or what?" } %>
+                  <%= link_to beer_path(beer), method: :delete, data: { confirm: "Sure or what?" } do %>
                     <h2 class="card-trip-pricing">delete</h2>
                    <% end %>
                 </div>
@@ -34,7 +34,7 @@
     </div>
     <div class="col-4">
       <h2>Add a beer:</h2>
-      <%= simple_form_for [@brewery @beer] do |f| %>
+      <%= simple_form_for [@brewery, @beer] do |f| %>
       <%= f.input :name, placeholder: "Zywiec" %>
        <%= f.input :image_url %>
        <%= f.submit "Add", class: "btn btn-primary" %>

@@ -19,7 +19,7 @@ Brewery.create!(
 
 Brewery.create!(
   name: "Markowy",
-  banner_url: "https://browarmarkowy.pl/"
+  banner_url: "http://thebeerhouse.iep.tokyo/wp-content/uploads/2020/09/thebeerhouse_counter1-e1599892105822.jpg"
 )
 
 Brewery.create!(
