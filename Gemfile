@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
+gem "font-awesome-sass", "~> 6.1"
 gem 'simple_form'
 
 group :development, :test do

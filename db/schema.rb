@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_11_164728) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_12_040851) do
+  create_table "beers", force: :cascade do |t|
+    t.integer "brewery_id", null: false
+    t.string "name"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brewery_id"], name: "index_beers_on_brewery_id"
+  end
+
   create_table "breweries", force: :cascade do |t|
     t.string "name"
     t.string "banner_url"
@@ -18,4 +27,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_164728) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "beers", "breweries"
 end
