@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @brewery.banner_url %>);">
+<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @brewery.banner_url %>);">
   <div class="container">
     <h1><%= @brewery.name %></h1>
   </div>
@@ -12,13 +12,13 @@
         <div class="row">
           <% @brewery.beers.each do |beer| %>
             <div class="col-6">
-              <div class="card-trip mb-3">
+              <div class="card-trip mb-5">
                 <img src="<%= beer.image_url %>" />
                 <div class="card-trip-infos">
                   <div>
                     <h2><%= beer.name %></h2>
                   </div>
-                  <%= link_to beer_path(beer), method: :delete, data: { confirm: "Sure or what?" } do %>
+                  <%= link_to beer_path(beer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                     <h2 class="card-trip-pricing">delete</h2>
                    <% end %>
                 </div>
@@ -35,7 +35,7 @@
     <div class="col-4">
       <h2>Add a beer:</h2>
       <%= simple_form_for [@brewery, @beer] do |f| %>
-      <%= f.input :name, placeholder: "Zywiec" %>
+      <%= f.input :name, placeholder: "Dojlidy" %>
        <%= f.input :image_url %>
        <%= f.submit "Add", class: "btn btn-primary" %>
       <% end %>

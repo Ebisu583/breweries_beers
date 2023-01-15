@@ -13,7 +13,7 @@ class BeersController < ApplicationController
   def destroy
     @beer = Beer.find(params[:id])
     @beer.destroy
-    redirect_to brewery_path(@beer.brewery)
+    redirect_to brewery_path(@beer.brewery), status: :see_other
   end
 
   private
